@@ -1,9 +1,22 @@
 
-ut(unit: 'SECONDS', time: 5) {
-    stage("One"){
-        node {
-            sleep 10
-            echo 'Hello'
+peline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
         }
     }
 }
